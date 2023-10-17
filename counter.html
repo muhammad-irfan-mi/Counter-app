@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus Minus Counter</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        background-color: antiquewhite;
+    }
+
+    .text {
+        display: flex;
+        height: 48vh;
+        justify-content: center;
+        align-items: end;
+    }
+
+    .btn {
+        height: 50vh;
+        margin: 10px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+
+    button {
+        padding: 10px 16px;
+        border-radius: 8px;
+        margin: 5px;
+    }
+
+    h1 {    
+        width: 7%;
+        border: 1px solid gray;
+        border-radius: 7px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="text">
+        <h1 id="value"></h1>
+    </div>
+    <div class="btn">
+        <button onclick="countplus()" id="plus">Plus</button>
+        <button onclick="refresh()" id="reset">Reset</button>
+        <button onclick="countminus()" id="minus">Minus</button>
+    </div>
+    <script>
+        let value = document.getElementById("value")
+        let num = 0;
+        value.innerHTML = num
+        function countplus() {
+            num++;
+            let add = value.innerHTML = num
+        }
+        function refresh() {
+            num = 0;
+            value.innerHTML = num
+        }
+        function countminus() {
+            if(num == 0){
+                return num;
+            }
+            num--;
+            value.innerHTML = num
+        }
+    </script>
+</body>
+
+</html>
